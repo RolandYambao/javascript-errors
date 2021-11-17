@@ -63,8 +63,51 @@ function typeError() {
     }
 }
 
+// URIError
+function uriError() {
+    try {
+        decodeURIComponent('%%323%%')
+    }
+    catch (error) {
+        if (error instanceof URIError) {
+            console.log("URIError Detected");
+        }
+    }
+}
+
+// AggregateError
+function aggregateError() {
+    Promise.any([Promise.reject(new Error("Error")),
+    ]).catch(error => {
+        if (error instanceof AggregateError) {
+            console.log("Aggregate Error Detected");
+        }
+    })
+}
+
+// InternalError
+function internalError() {
+    try {
+        function loop(x) {
+            if (x >= 1000000000000)
+                return;
+            console.log(x);
+            loop(x + 1);
+        }
+        loop(0);
+    }
+    catch (error) {
+        if (error instanceof InternalError) {
+            console.log("Internal Error Detected");
+        }
+    }
+}
+
 evalError()
 enactRangeError();
 referenceError();
 syntaxError();
 typeError();
+uriError();
+aggregateError();
+internalError();
