@@ -1,0 +1,21 @@
+{
+  "name": "javascript-errors",
+  "version": "1.0.0",
+  "description": "Searching for Errors in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RolandYambao/javascript-errors.git"
+  },
+  "keywords": [],
+  "author": "Roland Yambao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RolandYambao/javascript-errors/issues"
+  },
+  "homepage": "https://github.com/RolandYambao/javascript-errors#readme"
+}
