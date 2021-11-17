@@ -5,7 +5,8 @@ function evalError() {
     }
     catch (error) {
         if (error instanceof EvalError) {
-            console.log("Eval Error Detected");
+            console.log("<----------Eval Error Detected---------->");
+            console.log(error.stack);
         }
     }
 }
@@ -13,7 +14,7 @@ function evalError() {
 // RangeError
 function rangeError(n) {
     if (!(n >= -500 && n <= 500)) {
-        throw new RangeError("The argument must be between -500 and 500.")
+        throw new RangeError("Only between -500 and 500")
     }
 }
 function enactRangeError() {
@@ -22,7 +23,8 @@ function enactRangeError() {
     }
     catch (error) {
         if (error instanceof RangeError) {
-            console.log("Range Error Detected")
+            console.log("<----------Range Error Detected---------->")
+            console.log(error.stack);
         }
     }
 }
@@ -34,7 +36,8 @@ function referenceError() {
     }
     catch (error) {
         if (error instanceof ReferenceError) {
-            console.log("Reference Error Detected");
+            console.log("<----------Reference Error Detected---------->");
+            console.log(error.stack);
         }
     }
 }
@@ -46,7 +49,8 @@ function syntaxError() {
     }
     catch (error) {
         if (error instanceof SyntaxError) {
-            console.log("Syntax Error Detected");
+            console.log("<----------Syntax Error Detected---------->");
+            console.log(error.stack);
         }
     }
 }
@@ -58,7 +62,8 @@ function typeError() {
     }
     catch (error) {
         if (error instanceof TypeError) {
-            console.log("Type Error Detected");
+            console.log("<----------Type Error Detected---------->");
+            console.log(error.stack);
         }
     }
 }
@@ -70,7 +75,8 @@ function uriError() {
     }
     catch (error) {
         if (error instanceof URIError) {
-            console.log("URIError Detected");
+            console.log("<----------URIError Detected---------->");
+            console.log(error.stack);
         }
     }
 }
@@ -80,7 +86,8 @@ function aggregateError() {
     Promise.any([Promise.reject(new Error("Error")),
     ]).catch(error => {
         if (error instanceof AggregateError) {
-            console.log("Aggregate Error Detected");
+            console.log("<----------Aggregate Error Detected---------->");
+            console.log(error.stack);
         }
     })
 }
@@ -88,6 +95,7 @@ function aggregateError() {
 // InternalError
 function internalError() {
     try {
+        let i = 0;
         function forever(i) {
             if (i >= 9999999999999999)
                 return;
@@ -97,7 +105,8 @@ function internalError() {
         forever(i);
     }
     catch (error) {
-        console.log("Internal Error Detected");
+        console.log("<----------Internal Error Detected---------->");
+        console.log(error.stack);
     }
 }
 
@@ -108,7 +117,8 @@ function error() {
     }
     catch (error) {
         if (error instanceof Error) {
-            console.log("Error Detected");
+            console.log("<----------Error Detected---------->");
+            console.log(error.stack);
         }
     }
 }
