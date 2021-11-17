@@ -7,6 +7,7 @@ function evalError() {
         if (error instanceof EvalError) {
             console.log("<----------Eval Error Detected---------->");
             console.log(error.stack);
+            console.log(error.errors);
         }
     }
 }
@@ -25,6 +26,7 @@ function enactRangeError() {
         if (error instanceof RangeError) {
             console.log("<----------Range Error Detected---------->")
             console.log(error.stack);
+            console.log(error.errors);
         }
     }
 }
@@ -38,6 +40,7 @@ function referenceError() {
         if (error instanceof ReferenceError) {
             console.log("<----------Reference Error Detected---------->");
             console.log(error.stack);
+            console.log(error.errors);
         }
     }
 }
@@ -51,6 +54,7 @@ function syntaxError() {
         if (error instanceof SyntaxError) {
             console.log("<----------Syntax Error Detected---------->");
             console.log(error.stack);
+            console.log(error.errors);
         }
     }
 }
@@ -64,6 +68,7 @@ function typeError() {
         if (error instanceof TypeError) {
             console.log("<----------Type Error Detected---------->");
             console.log(error.stack);
+            console.log(error.errors);
         }
     }
 }
@@ -77,6 +82,7 @@ function uriError() {
         if (error instanceof URIError) {
             console.log("<----------URIError Detected---------->");
             console.log(error.stack);
+            console.log(error.errors);
         }
     }
 }
@@ -88,6 +94,7 @@ function aggregateError() {
         if (error instanceof AggregateError) {
             console.log("<----------Aggregate Error Detected---------->");
             console.log(error.stack);
+            console.log(error.errors);
         }
     })
 }
@@ -107,6 +114,7 @@ function internalError() {
     catch (error) {
         console.log("<----------Internal Error Detected---------->");
         console.log(error.stack);
+        console.log(error.errors);
     }
 }
 
@@ -119,6 +127,7 @@ function error() {
         if (error instanceof Error) {
             console.log("<----------Error Detected---------->");
             console.log(error.stack);
+            console.log(error.errors);
         }
     }
 }
