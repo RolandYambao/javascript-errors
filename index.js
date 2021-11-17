@@ -88,13 +88,13 @@ function aggregateError() {
 // InternalError
 function internalError() {
     try {
-        function loop(x) {
+        function forever(x) {
             if (x >= 1000000000000)
                 return;
-            console.log(x);
-            loop(x + 1);
+            console.log(x)
+            forever(x + 1);
         }
-        loop(0);
+        forever(0);
     }
     catch (error) {
         if (error instanceof InternalError) {
