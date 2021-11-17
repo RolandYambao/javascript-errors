@@ -89,7 +89,7 @@ function aggregateError() {
 function internalError() {
     try {
         function forever(i) {
-            if (i >= 1000000000000)
+            if (i >= 9999999999999999)
                 return;
             // Do not Print Anything
             forever(i + 1);
