@@ -88,17 +88,27 @@ function aggregateError() {
 // InternalError
 function internalError() {
     try {
-        function forever(x) {
+        function loop(x) {
             if (x >= 1000000000000)
                 return;
-            console.log(x)
-            forever(x + 1);
+            // Do not Print Anything
+            loop(x + 1);
         }
-        forever(0);
+        loop(0);
     }
     catch (error) {
-        if (error instanceof InternalError) {
-            console.log("Internal Error Detected");
+        console.log("Internal Error Detected");
+    }
+}
+
+// Error
+function error() {
+    try {
+        throw new Error(" Error");
+    }
+    catch (error) {
+        if (error instanceof Error) {
+            console.log("Error Detected");
         }
     }
 }
@@ -111,3 +121,4 @@ typeError();
 uriError();
 aggregateError();
 internalError();
+error();
