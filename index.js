@@ -66,7 +66,7 @@ function typeError() {
 // URIError
 function uriError() {
     try {
-        decodeURIComponent('%%323%%')
+        decodeURIComponent('%%323%%');
     }
     catch (error) {
         if (error instanceof URIError) {
